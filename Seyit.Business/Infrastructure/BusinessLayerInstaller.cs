@@ -6,11 +6,11 @@ using Seyit.Data.Infrastructure;
 
 namespace Seyit.Business.Infrastructure
 {
-    public class BusinesslayerInstaller:IContainerInstaller
+    public class BusinessLayerInstaller:IContainerInstaller
     {
         public void Install(IServiceCollection services)
         {
-            new DatalayerInstaller().Install(services);
+            new DataLayerInstaller().Install(services);
 
             services.AddMediatR(Assembly.GetExecutingAssembly());
         }

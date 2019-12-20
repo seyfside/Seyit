@@ -23,7 +23,7 @@ namespace Seyit.Web
         {
             services.AddControllers();
             
-            new BusinesslayerInstaller().Install(services);
+            new BusinessLayerInstaller().Install(services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

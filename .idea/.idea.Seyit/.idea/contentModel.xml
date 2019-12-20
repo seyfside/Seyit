@@ -5,7 +5,9 @@
       <e p="packages" t="ExcludeRecursive" />
       <e p="Seyit.Business" t="IncludeRecursive">
         <e p="Airways" t="Include">
-          <e p="Command" t="Include" />
+          <e p="Command" t="Include">
+            <e p="CreateAirwayCommand.cs" t="Include" />
+          </e>
           <e p="Models" t="Include" />
           <e p="Query" t="Include">
             <e p="GetAllAirwaysQuery.cs" t="Include" />
@@ -39,11 +41,23 @@
         <e p="Seyit.Core.csproj" t="IncludeRecursive" />
       </e>
       <e p="Seyit.DAta" t="IncludeRecursive">
-        <e p="Airway.cs" t="Include" />
+        <e p="Airways" t="Include">
+          <e p="Airway.cs" t="Include" />
+          <e p="AirwayConfiguration.cs" t="Include" />
+          <e p="AirwayDto.cs" t="Include" />
+          <e p="AirwayRepository.cs" t="Include" />
+          <e p="IAirwayRepository.cs" t="Include" />
+        </e>
         <e p="bin" t="ExcludeRecursive" />
         <e p="dbschema.sql" t="Include" />
+        <e p="Flight.sqlite" t="Include" />
+        <e p="IEntity.cs" t="Include" />
         <e p="Infrastructure" t="Include">
           <e p="DatalayerInstaller.cs" t="Include" />
+          <e p="GenericRepository.cs" t="Include" />
+          <e p="IGenericRepository.cs" t="Include" />
+          <e p="PagedResult.cs" t="Include" />
+          <e p="SearchModel.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -52,6 +66,7 @@
             </e>
           </e>
         </e>
+        <e p="Readme.md" t="Include" />
         <e p="Seyit.DAta.csproj" t="IncludeRecursive" />
         <e p="SeyitDbContext.cs" t="Include" />
       </e>
@@ -63,6 +78,7 @@
         <e p="Controllers" t="Include">
           <e p="AirwaysController.cs" t="Include" />
         </e>
+        <e p="Flight.sqlite" t="Include" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp3.1" t="Include">

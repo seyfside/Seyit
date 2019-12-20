@@ -5,7 +5,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Airways\Command" />
       <Folder Include="Airways\Models" />
       <Folder Include="Airways\Validator" />
     </ItemGroup>

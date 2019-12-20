@@ -1,7 +1,10 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Seyit.Business.Airways.Command;
 using Seyit.Business.Airways.Query;
+using Seyit.Data.Airways;
 
 namespace Seyit.Web.Controllers
 {
@@ -22,6 +25,15 @@ namespace Seyit.Web.Controllers
             var result=await _mediator.Send(query);
             
             return Ok(result);
+        }
+
+        [HttpPost]
+
+        public async Task<IActionResult> Create(CreateAirwayCommand command)
+        {
+            var id = await _mediator.Send(command);
+
+            return Created(String.Empty, id);
         }
     }
 }

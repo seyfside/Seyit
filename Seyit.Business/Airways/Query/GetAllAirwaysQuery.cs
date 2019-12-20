@@ -1,10 +1,13 @@
 ﻿using System;
 using MediatR;
+using Seyit.Data.Airways;
+using Seyit.Data.Infrastructure;
 
 namespace Seyit.Business.Airways.Query
 {
-    public class GetAllAirwaysQuery:IRequest<Guid>
+    public class GetAllAirwaysQuery:IRequest<PagedResult<AirwayDto>>
     {
-        public Guid Id { get; set; }
+        public int CurrentPage { get; set; }
+        public int PageSize { get; set; }
     }
 }
