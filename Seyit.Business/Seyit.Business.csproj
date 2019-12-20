@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Folder Include="Airways\Command" />
+      <Folder Include="Airways\Models" />
+      <Folder Include="Airways\Validator" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="MediatR" Version="7.0.0" />
+      <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Seyit.Core\Seyit.Core.csproj" />
+      <ProjectReference Include="..\Seyit.Data\Seyit.Data.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=3.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60">
+        <HintPath>..\..\..\Program Files\dotnet\packs\Microsoft.AspNetCore.App.Ref\3.1.0\ref\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+</Project>
