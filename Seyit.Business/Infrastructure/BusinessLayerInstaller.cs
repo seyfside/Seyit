@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using Seyit.Core;
@@ -12,7 +13,10 @@ namespace Seyit.Business.Infrastructure
         {
             new DataLayerInstaller().Install(services);
 
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
             services.AddMediatR(Assembly.GetExecutingAssembly());
+
+            services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
         }
     }
 }

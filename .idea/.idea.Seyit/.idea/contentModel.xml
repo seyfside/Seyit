@@ -7,44 +7,63 @@
         <e p="Airways" t="Include">
           <e p="Command" t="Include">
             <e p="CreateAirwayCommand.cs" t="Include" />
+            <e p="CreateAirwayCommandHandler.cs" t="Include" />
           </e>
           <e p="Models" t="Include" />
           <e p="Query" t="Include">
-            <e p="GetAllAirwaysQuery.cs" t="Include" />
-            <e p="GetAllAirwaysQueryHandler.cs" t="Include" />
+            <e p="GetAirwayCombosQuery.cs" t="Include" />
+            <e p="GetAirwayCombosQueryHandler.cs" t="Include" />
           </e>
-          <e p="Validator" t="Include" />
+          <e p="Validator" t="Include">
+            <e p="CreateAirwayCommandValidator.cs" t="Include" />
+          </e>
         </e>
         <e p="bin" t="ExcludeRecursive" />
         <e p="Infrastructure" t="Include">
           <e p="BusinesslayerInstaller.cs" t="Include" />
+          <e p="ValidationBehavior.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
-          <e p="Debug" t="Include">
+          <e p="Release" t="Include">
             <e p="netcoreapp3.0" t="Include">
               <e p="Seyit.Business.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
         </e>
         <e p="Seyit.Business.csproj" t="IncludeRecursive" />
+        <e p="Suppliers" t="Include">
+          <e p="Command" t="Include">
+            <e p="CreateSupplierCommand.cs" t="Include" />
+            <e p="CreateSupplierCommandHandler.cs" t="Include" />
+          </e>
+          <e p="Query" t="Include">
+            <e p="GetSupplierCombosQuery.cs" t="Include" />
+            <e p="GetSupplierCombosQueryHandler.cs" t="Include" />
+          </e>
+          <e p="Validator" t="Include">
+            <e p="CreateSupplierCommandValidator.cs" t="Include" />
+          </e>
+        </e>
       </e>
       <e p="Seyit.Core" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="IContainerInstaller.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive">
-          <e p="Debug" t="Include">
+          <e p="Release" t="Include">
             <e p="netcoreapp3.0" t="Include">
               <e p="Seyit.Core.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
         </e>
+        <e p="PagedResult.cs" t="Include" />
+        <e p="SearchModel.cs" t="Include" />
         <e p="Seyit.Core.csproj" t="IncludeRecursive" />
       </e>
       <e p="Seyit.DAta" t="IncludeRecursive">
         <e p="Airways" t="Include">
           <e p="Airway.cs" t="Include" />
+          <e p="AirwayComboDto.cs" t="Include" />
           <e p="AirwayConfiguration.cs" t="Include" />
-          <e p="AirwayDto.cs" t="Include" />
           <e p="AirwayRepository.cs" t="Include" />
           <e p="IAirwayRepository.cs" t="Include" />
         </e>
@@ -56,11 +75,9 @@
           <e p="DatalayerInstaller.cs" t="Include" />
           <e p="GenericRepository.cs" t="Include" />
           <e p="IGenericRepository.cs" t="Include" />
-          <e p="PagedResult.cs" t="Include" />
-          <e p="SearchModel.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
-          <e p="Debug" t="Include">
+          <e p="Release" t="Include">
             <e p="netcoreapp3.0" t="Include">
               <e p="Seyit.DAta.AssemblyInfo.cs" t="Include" />
             </e>
@@ -69,6 +86,13 @@
         <e p="Readme.md" t="Include" />
         <e p="Seyit.DAta.csproj" t="IncludeRecursive" />
         <e p="SeyitDbContext.cs" t="Include" />
+        <e p="Suppliers" t="Include">
+          <e p="ISupplierRepository.cs" t="Include" />
+          <e p="Supplier.cs" t="Include" />
+          <e p="SupplierComboDto.cs" t="Include" />
+          <e p="SupplierConfiguration.cs" t="Include" />
+          <e p="SupplierRepository.cs" t="Include" />
+        </e>
       </e>
       <e p="Seyit.sln" t="IncludeFlat" />
       <e p="Seyit.Web" t="IncludeRecursive">
@@ -77,10 +101,12 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="Controllers" t="Include">
           <e p="AirwaysController.cs" t="Include" />
+          <e p="ErrorController.cs" t="Include" />
+          <e p="SuppliersController.cs" t="Include" />
         </e>
         <e p="Flight.sqlite" t="Include" />
         <e p="obj" t="ExcludeRecursive">
-          <e p="Debug" t="Include">
+          <e p="Release" t="Include">
             <e p="netcoreapp3.1" t="Include">
               <e p="Seyit.Web.AssemblyInfo.cs" t="Include" />
             </e>

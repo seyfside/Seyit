@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations.Schema;
+using Seyit.Data.Suppliers;
 
 namespace Seyit.Data
 {
@@ -18,7 +19,7 @@ namespace Seyit.Data
         public bool Status { get; set; }
         public string WebServicesUrl { get; set; }
         public bool CanCreateRezervation { get; set; }
-        public int SupplierId { get; set; }
+        public Supplier Supplier { get; set; }
         public int AccountId { get; set; }
         public int SearchServiceTimeOutSecond { get; set; }
     }

@@ -1,3 +1,4 @@
+using System.Linq;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -21,7 +22,9 @@ namespace Seyit.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers().ConfigureApiBehaviorOptions(options =>
+            {
+                options.ClientErrorMapping[500].Title="kk";});
             
             new BusinessLayerInstaller().Install(services);
         }
@@ -29,10 +32,7 @@ namespace Seyit.Web
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
+            app.UseExceptionHandler(env.IsDevelopment() ? "/error-local-development" : "/error");
 
             app.UseHttpsRedirection();
 

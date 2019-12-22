@@ -1,5 +1,5 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Seyit.Data.Infrastructure;
 
@@ -11,27 +11,9 @@ namespace Seyit.Data.Airways
         {
         }
 
-        public PagedResult<AirwayDto> Search(SearchModel<Airway> searchModel)
+        public async Task<AirwayComboDto[]> GetCombosAsync()
         {
-            var query = searchModel.Where != null ? Table.Where(searchModel.Where) : Table;
-
-            if (searchModel.OrderBy != null)
-                query = searchModel.IsDescending
-                    ? query.OrderByDescending(searchModel.OrderBy)
-                    : query.OrderBy(searchModel.OrderBy);
-
-            var pagedResult = new PagedResult<AirwayDto>
-            {
-                CurrentPage = searchModel.CurrentPage, PageSize = searchModel.PageSize, RowCount = query.Count()
-            };
-
-            var pageCount = (double) pagedResult.RowCount / searchModel.PageSize;
-            pagedResult.PageCount = (int) Math.Ceiling(pageCount);
-
-            var skip = (searchModel.CurrentPage - 1) * searchModel.PageSize;
-            pagedResult.Result = query.Skip(skip).Take(searchModel.PageSize).Select(AirwayDto.Projection).ToList();
-
-            return pagedResult;
+            return await Table.Where(x => x.Status).Select(AirwayComboDto.Projection).ToArrayAsync();
         }
     }
 }

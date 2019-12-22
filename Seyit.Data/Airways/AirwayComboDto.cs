@@ -3,19 +3,19 @@ using System.Linq.Expressions;
 
 namespace Seyit.Data.Airways
 {
-    public class AirwayDto
+    public class AirwayComboDto
     {
         public string Name { get; set; }
-        public bool Status { get; set; }
+        public Guid Id { get; set; }
         
-        public static Expression<Func<Airway,AirwayDto>> Projection
+        public static Expression<Func<Airway,AirwayComboDto>> Projection
         {
             get
             {
-                return x => new AirwayDto
+                return x => new AirwayComboDto
                 {
                     Name = x.AirWayName,
-                    Status = x.Status
+                    Id = x.Id
                 };
             }
         }

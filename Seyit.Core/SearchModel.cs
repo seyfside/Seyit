@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq.Expressions;
 
-namespace Seyit.Data.Infrastructure
+namespace Seyit.Core
 {
     public class SearchModel<T>
     {

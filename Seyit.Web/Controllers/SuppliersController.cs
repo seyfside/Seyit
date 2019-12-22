@@ -3,18 +3,19 @@ using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Seyit.Business.Airways.Command;
-using Seyit.Business.Airways.Query;
-using Seyit.Data.Airways;
+using Seyit.Business.Suppliers.Command;
+using Seyit.Business.Suppliers.Query;
+using Seyit.Data.Suppliers;
 
 namespace Seyit.Web.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class AirwaysController : ControllerBase
+    public class SuppliersController : ControllerBase
     {
         private readonly IMediator _mediator;
 
-        public AirwaysController(IMediator mediator)
+        public SuppliersController(IMediator mediator)
         {
             _mediator = mediator;
         }
@@ -22,12 +23,11 @@ namespace Seyit.Web.Controllers
         [HttpGet]
         public async Task<IActionResult> GetCombos()
         {
-            return Ok(await _mediator.Send(new GetAirwayCombosQuery()));
+            return Ok(await _mediator.Send(new GetSupplierCombosQuery()));
         }
 
         [HttpPost]
-
-        public async Task<IActionResult> Create(CreateAirwayCommand command)
+        public async Task<IActionResult> Create(CreateSupplierCommand command)
         {
             var id = await _mediator.Send(command);
 

@@ -18,7 +18,7 @@ namespace Seyit.Business.Airways.Command
             _dbContext = dbContext;
         }
 
-        public Task<Guid> Handle(CreateAirwayCommand request, CancellationToken cancellationToken)
+        public async Task<Guid> Handle(CreateAirwayCommand request, CancellationToken cancellationToken)
         {
             var entity=new Airway
             {
@@ -27,9 +27,9 @@ namespace Seyit.Business.Airways.Command
                 Status = request.Status
             };
             _airwayRepository.Insert(entity);
-            _dbContext.SaveChanges();
+            await _dbContext.SaveChangesAsync(cancellationToken);
             
-            return Task.FromResult<Guid>(request.Id);
+            return await Task.FromResult<Guid>(request.Id);
         }
     }
 }
