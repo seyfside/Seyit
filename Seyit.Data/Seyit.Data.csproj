@@ -15,10 +15,9 @@
     </ItemGroup>
 
     <ItemGroup>
-      <None Remove="Flight.sqlite" />
-      <Content Include="Flight.sqlite">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Content>
+      <None Update="Flight.sqlite">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
     </ItemGroup>
 
 </Project>

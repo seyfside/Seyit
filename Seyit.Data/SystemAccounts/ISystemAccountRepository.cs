@@ -5,6 +5,6 @@ namespace Seyit.Data.SystemAccounts
 {
     public interface ISystemAccountRepository:IGenericRepository<SystemAccount>
     {
-        Task<SystemAccount> GetByAccountCodeAsync(string accountCode);
+        Task<SystemAccount> GetParentAccountInfoAsync(string accountCode);
     }
 }

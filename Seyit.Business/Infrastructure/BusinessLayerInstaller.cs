@@ -13,6 +13,7 @@ namespace Seyit.Business.Infrastructure
         {
             new DataLayerInstaller().Install(services);
 
+            services.AddScoped<IDateTimeProvider, DateTimeProvider>();
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
             services.AddMediatR(Assembly.GetExecutingAssembly());
 

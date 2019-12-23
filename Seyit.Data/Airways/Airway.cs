@@ -19,7 +19,7 @@ namespace Seyit.Data
         public string WebServicesUrl { get; set; }
         public bool CanCreateRezervation { get; set; }
         public Supplier Supplier { get; set; }
-        public int AccountId { get; set; }
+        public long AccountId { get; set; }
         public int SearchServiceTimeOutSecond { get; set; }
     }
 }

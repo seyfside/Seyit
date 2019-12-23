@@ -7,13 +7,13 @@ namespace Seyit.Data.Currencies
 {
     public class CurrencyRepository :GenericRepository<Currency>, ICurrencyRepository
     {
-        protected CurrencyRepository(SeyitDbContext context) : base(context)
+        public CurrencyRepository(SeyitDbContext context) : base(context)
         {
         }
 
         public async Task<CurrencyComboDto[]> GetCombosAsync()
         {
-            return await Table.Select(CurrencyComboDto.Projection).ToArrayAsync();
+            return await Table.AsNoTracking().Select(CurrencyComboDto.Projection).ToArrayAsync();
         }
     }
 }

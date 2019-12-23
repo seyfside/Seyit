@@ -7,14 +7,14 @@ namespace Seyit.Data.SystemAccounts
 {
     public class SystemAccountRepository:GenericRepository<SystemAccount>,ISystemAccountRepository
     {
-        protected SystemAccountRepository(SeyitDbContext context) : base(context)
+        public SystemAccountRepository(SeyitDbContext context) : base(context)
         {
         }
 
 
-        public async Task<SystemAccount> GetByAccountCodeAsync(string accountCode)
+        public async Task<SystemAccount> GetParentAccountInfoAsync(string accountCode)
         {
-            return await Table.Where(x => x.AccountCode == accountCode).FirstOrDefaultAsync();
+            return await Table.AsNoTracking().Where(x => x.AccountCode == accountCode).FirstOrDefaultAsync();
         }
     }
 }

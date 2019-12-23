@@ -21,6 +21,8 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="Infrastructure" t="Include">
           <e p="BusinesslayerInstaller.cs" t="Include" />
+          <e p="DateTimeProvider.cs" t="Include" />
+          <e p="IDateTimeProvider.cs" t="Include" />
           <e p="ValidationBehavior.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">

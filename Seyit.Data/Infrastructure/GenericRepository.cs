@@ -8,7 +8,7 @@ namespace Seyit.Data.Infrastructure
     {
         private readonly DbSet<T> _table;
 
-        protected GenericRepository(SeyitDbContext context)
+        public GenericRepository(SeyitDbContext context)
         {
             _table = context.Set<T>();
         }

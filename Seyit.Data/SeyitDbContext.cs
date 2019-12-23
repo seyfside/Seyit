@@ -10,10 +10,12 @@ namespace Seyit.Data
     {
         public DbSet<Airway> Airways { get; set; }
         public DbSet<Supplier> Suppliers { get; set; }
+        public DbSet<Currency> Currencies { get; set; }
+        public DbSet<SystemAccount> SystemAccounts { get; set; }
         
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseInMemoryDatabase(databaseName:"flight");
+            optionsBuilder.UseSqlite("Filename=Flight.sqlite");
             base.OnConfiguring(optionsBuilder);
         }
 
