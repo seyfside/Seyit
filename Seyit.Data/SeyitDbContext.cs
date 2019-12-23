@@ -1,6 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Seyit.Data.Airways;
+using Seyit.Data.Currencies;
 using Seyit.Data.Suppliers;
+using Seyit.Data.SystemAccounts;
 
 namespace Seyit.Data
 {
@@ -19,6 +21,8 @@ namespace Seyit.Data
         {
             modelBuilder.ApplyConfiguration(new AirwayConfiguration());
             modelBuilder.ApplyConfiguration(new SupplierConfiguration());
+            modelBuilder.ApplyConfiguration(new CurrencyConfiguration());
+            modelBuilder.ApplyConfiguration(new SystemAccountConfiguration());
             
             base.OnModelCreating(modelBuilder);
         }

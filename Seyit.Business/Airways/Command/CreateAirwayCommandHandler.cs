@@ -26,10 +26,14 @@ namespace Seyit.Business.Airways.Command
                 AirWayName = request.AirWayName,
                 Status = request.Status
             };
+
+            // _dbContext.Database.BeginTransaction();
             _airwayRepository.Insert(entity);
             await _dbContext.SaveChangesAsync(cancellationToken);
             
-            return await Task.FromResult<Guid>(request.AirWayId);
+            //_dbContext.Database.CommitTransaction();
+            
+            return await Task.FromResult(entity.AirWayId);
         }
     }
 }

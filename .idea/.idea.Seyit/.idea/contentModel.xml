@@ -68,6 +68,13 @@
           <e p="IAirwayRepository.cs" t="Include" />
         </e>
         <e p="bin" t="ExcludeRecursive" />
+        <e p="Currencies" t="Include">
+          <e p="Currency.cs" t="Include" />
+          <e p="CurrencyComboDto.cs" t="Include" />
+          <e p="CurrencyConfiguration.cs" t="Include" />
+          <e p="CurrencyRepository.cs" t="Include" />
+          <e p="ICurrencyRepository.cs" t="Include" />
+        </e>
         <e p="dbschema.sql" t="Include" />
         <e p="Flight.sqlite" t="Include" />
         <e p="Infrastructure" t="Include">
@@ -91,6 +98,13 @@
           <e p="SupplierComboDto.cs" t="Include" />
           <e p="SupplierConfiguration.cs" t="Include" />
           <e p="SupplierRepository.cs" t="Include" />
+        </e>
+        <e p="SystemAccounts" t="Include">
+          <e p="ISystemAccountRepository.cs" t="Include" />
+          <e p="SystemAccount.cs" t="Include" />
+          <e p="SystemAccountConfiguration.cs" t="Include" />
+          <e p="SystemAccountParentAccountDto.cs" t="Include" />
+          <e p="SystemAccountRepository.cs" t="Include" />
         </e>
       </e>
       <e p="Seyit.sln" t="IncludeFlat" />
