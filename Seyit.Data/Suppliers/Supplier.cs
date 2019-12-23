@@ -1,12 +1,10 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Seyit.Data.Suppliers
 {
-    public class Supplier : IEntity
+    public class Supplier
     {
-        [Column("SupplierId")] public Guid Id { get; set; }//todo: change key type from int to guid
-
+        public int SupplierId { get; set; }
         public string SupplierName { get; set; }
         public int ProcessOrder { get; set; }
     }

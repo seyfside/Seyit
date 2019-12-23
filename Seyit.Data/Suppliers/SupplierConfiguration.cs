@@ -7,7 +7,7 @@ namespace Seyit.Data.Suppliers
     {
         public void Configure(EntityTypeBuilder<Supplier> builder)
         {
-            builder.HasKey(x => x.Id);
+            builder.HasKey(x => x.SupplierId);
             builder.Property(x => x.SupplierName);
             builder.Property(x => x.ProcessOrder);
         }

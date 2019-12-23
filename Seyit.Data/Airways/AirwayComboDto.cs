@@ -5,8 +5,8 @@ namespace Seyit.Data.Airways
 {
     public class AirwayComboDto
     {
-        public string Name { get; set; }
-        public Guid Id { get; set; }
+        public string AirWayName { get; set; }
+        public Guid AirWayId { get; set; }
         
         public static Expression<Func<Airway,AirwayComboDto>> Projection
         {
@@ -14,8 +14,8 @@ namespace Seyit.Data.Airways
             {
                 return x => new AirwayComboDto
                 {
-                    Name = x.AirWayName,
-                    Id = x.Id
+                    AirWayName = x.AirWayName,
+                    AirWayId = x.AirWayId
                 };
             }
         }

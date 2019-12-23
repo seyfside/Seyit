@@ -3,10 +3,10 @@ using MediatR;
 
 namespace Seyit.Business.Suppliers.Command
 {
-    public class CreateSupplierCommand:IRequest<Guid>
+    public class CreateSupplierCommand:IRequest<int>
     {
-        public Guid Id => Guid.NewGuid();
-        public string Name { get; set; }
-        public int Order { get; set; }
+        public int SupplierId { get; set; }
+        public string SupplierName { get; set; }
+        public int ProcessOrder { get; set; }
     }
 }

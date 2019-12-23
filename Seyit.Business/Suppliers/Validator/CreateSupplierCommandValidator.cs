@@ -7,8 +7,8 @@ namespace Seyit.Business.Suppliers.Validator
     {
         public CreateSupplierCommandValidator()
         {
-            RuleFor(x => x.Name).NotEmpty();
-            RuleFor(x => x.Order).NotEmpty();
+            RuleFor(x => x.SupplierName).NotEmpty();
+            RuleFor(x => x.ProcessOrder).NotEmpty();
         }
     }
 }

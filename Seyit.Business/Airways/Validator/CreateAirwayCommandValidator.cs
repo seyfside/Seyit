@@ -7,7 +7,7 @@ namespace Seyit.Business.Airways.Validator
     {
         public CreateAirwayCommandValidator()
         {
-            RuleFor(x => x.Name).NotEmpty();
+            RuleFor(x => x.AirWayName).NotEmpty();
         }
     }
 }

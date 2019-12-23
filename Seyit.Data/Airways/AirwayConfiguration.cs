@@ -7,7 +7,7 @@ namespace Seyit.Data.Airways
     {
         public void Configure(EntityTypeBuilder<Airway> builder)
         {
-            builder.HasKey(x => x.Id);
+            builder.HasKey(x => x.AirWayId);
             builder.Property(x => x.AirWayName);
             builder.Property(x => x.Status);
             builder.Property(x => x.AccountId);

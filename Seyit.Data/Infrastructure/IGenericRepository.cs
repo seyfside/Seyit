@@ -1,12 +1,12 @@
-﻿using System;
+﻿using System.Threading.Tasks;
 
 namespace Seyit.Data.Infrastructure
 {
-    public interface IGenericRepository<T> where T :class, IEntity
+    public interface IGenericRepository<T> where T :class
     {
-        T GetById(Guid id);
+        ValueTask<T> GetByIdAsync(object id);
         void Insert(T obj);
         void Update(T obj);
-        void Delete(Guid id);
+        void Delete(object id);
     }
 }

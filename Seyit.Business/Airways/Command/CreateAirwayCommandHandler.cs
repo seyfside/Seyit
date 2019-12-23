@@ -22,14 +22,14 @@ namespace Seyit.Business.Airways.Command
         {
             var entity=new Airway
             {
-                Id = request.Id,
-                AirWayName = request.Name,
+                AirWayId = request.AirWayId,
+                AirWayName = request.AirWayName,
                 Status = request.Status
             };
             _airwayRepository.Insert(entity);
             await _dbContext.SaveChangesAsync(cancellationToken);
             
-            return await Task.FromResult<Guid>(request.Id);
+            return await Task.FromResult<Guid>(request.AirWayId);
         }
     }
 }

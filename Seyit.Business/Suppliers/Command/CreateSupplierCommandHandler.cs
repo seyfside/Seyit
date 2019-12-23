@@ -7,7 +7,7 @@ using Seyit.Data.Suppliers;
 
 namespace Seyit.Business.Suppliers.Command
 {
-    public class CreateSupplierCommandHandler:IRequestHandler<CreateSupplierCommand,Guid>
+    public class CreateSupplierCommandHandler:IRequestHandler<CreateSupplierCommand,int>
     {
         private readonly ISupplierRepository _supplierRepository;
         private readonly SeyitDbContext _dbContext;
@@ -18,18 +18,18 @@ namespace Seyit.Business.Suppliers.Command
             _dbContext = dbContext;
         }
 
-        public async Task<Guid> Handle(CreateSupplierCommand request, CancellationToken cancellationToken)
+        public async Task<int> Handle(CreateSupplierCommand request, CancellationToken cancellationToken)
         {
             var entity=new Supplier
             {
-                Id = request.Id,
-                SupplierName = request.Name,
-                ProcessOrder = request.Order
+                SupplierId = request.SupplierId,
+                SupplierName = request.SupplierName,
+                ProcessOrder = request.ProcessOrder
             };
             _supplierRepository.Insert(entity);
             await _dbContext.SaveChangesAsync(cancellationToken);
             
-            return await Task.FromResult(request.Id);
+            return await Task.FromResult(entity.SupplierId);
         }
     }
 }

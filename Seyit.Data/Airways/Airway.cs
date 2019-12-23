@@ -4,10 +4,9 @@ using Seyit.Data.Suppliers;
 
 namespace Seyit.Data
 {
-    public class Airway : IEntity
+    public class Airway 
     {
-        [Column("AirWayId")]
-        public Guid Id { get; set; }
+        public Guid AirWayId { get; set; }
         public string AirWayName { get; set; }
         public string CarrierCode { get; set; }
         public string WebServicesUserName { get; set; }
