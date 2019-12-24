@@ -7,7 +7,7 @@ namespace Seyit.Data.Currencies
 {
     public class CurrencyRepository :GenericRepository<Currency>, ICurrencyRepository
     {
-        public CurrencyRepository(SeyitDbContext context) : base(context)
+        public CurrencyRepository(SeyitDbContext dbContext) : base(dbContext)
         {
         }
 

@@ -1,10 +1,11 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using Seyit.Data.Infrastructure;
 
 namespace Seyit.Data.SystemAccounts
 {
     public interface ISystemAccountRepository:IGenericRepository<SystemAccount>
     {
-        Task<SystemAccount> GetParentAccountInfoAsync(string accountCode);
+        Task<long> CreateAirwaySystemAccountsAsync(string airwayName,string regionLetter,DateTime creationDate);
     }
 }

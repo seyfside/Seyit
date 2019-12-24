@@ -1,4 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Console;
+using Microsoft.Extensions.Options;
 using Seyit.Data.Airways;
 using Seyit.Data.Currencies;
 using Seyit.Data.Suppliers;
@@ -15,9 +18,23 @@ namespace Seyit.Data
         
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Filename=Flight.sqlite");
+            optionsBuilder.UseSqlServer("Server=localhost\\SQLEXPRESS;Database=flight;Trusted_Connection=True;");
+            #if DEBUG
+            optionsBuilder.UseLoggerFactory(MyLoggerFactory);
+            #endif
             base.OnConfiguring(optionsBuilder);
         }
+        
+        public static readonly ILoggerFactory MyLoggerFactory
+            = LoggerFactory.Create(builder =>
+            {
+                builder
+                    .AddFilter((category, level) =>
+                    category == DbLoggerCategory.Database.Command.Name
+                    && level == LogLevel.Information)
+                    .AddConsole();
+            });
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

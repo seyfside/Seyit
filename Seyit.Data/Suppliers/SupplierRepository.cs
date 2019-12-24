@@ -7,7 +7,7 @@ namespace Seyit.Data.Suppliers
 {
     public class SupplierRepository : GenericRepository<Supplier>, ISupplierRepository
     {
-        public SupplierRepository(SeyitDbContext context) : base(context)
+        public SupplierRepository(SeyitDbContext dbContext) : base(dbContext)
         {
         }
 

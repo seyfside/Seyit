@@ -7,7 +7,7 @@ namespace Seyit.Data.Airways
 {
     public class AirwayRepository : GenericRepository<Airway>, IAirwayRepository
     {
-        public AirwayRepository(SeyitDbContext context) : base(context)
+        public AirwayRepository(SeyitDbContext dbContext) : base(dbContext)
         {
         }
 
