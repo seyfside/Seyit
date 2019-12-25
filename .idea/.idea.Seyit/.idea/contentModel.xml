@@ -59,6 +59,7 @@
         </e>
         <e p="PagedResult.cs" t="Include" />
         <e p="SearchModel.cs" t="Include" />
+        <e p="ServiceCollectionExtensions.cs" t="Include" />
         <e p="Seyit.Core.csproj" t="IncludeRecursive" />
       </e>
       <e p="Seyit.DAta" t="IncludeRecursive">
@@ -77,6 +78,7 @@
           <e p="CurrencyRepository.cs" t="Include" />
           <e p="ICurrencyRepository.cs" t="Include" />
         </e>
+        <e p="DataTypes.md" t="Include" />
         <e p="dbschema.sql" t="Include" />
         <e p="Flight.sqlite" t="Include" />
         <e p="Infrastructure" t="Include">

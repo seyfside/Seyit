@@ -1,8 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Reflection;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Logging.Console;
-using Microsoft.Extensions.Options;
-using Seyit.Data.Airways;
 using Seyit.Data.Currencies;
 using Seyit.Data.Suppliers;
 using Seyit.Data.SystemAccounts;
@@ -38,10 +36,7 @@ namespace Seyit.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new AirwayConfiguration());
-            modelBuilder.ApplyConfiguration(new SupplierConfiguration());
-            modelBuilder.ApplyConfiguration(new CurrencyConfiguration());
-            modelBuilder.ApplyConfiguration(new SystemAccountConfiguration());
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
             
             base.OnModelCreating(modelBuilder);
         }

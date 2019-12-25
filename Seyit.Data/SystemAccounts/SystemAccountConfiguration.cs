@@ -15,6 +15,7 @@ namespace Seyit.Data.SystemAccounts
             builder.Property(x => x.CreationDate);
             builder.Property(x => x.ParentAccountId);
             builder.Property(x => x.RegionLetter);
+                //.HasMaxLength().HasColumnType();
         }
     }
 }

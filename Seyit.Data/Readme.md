@@ -4,4 +4,8 @@
 * DetailDto : detay grünüm modeline verilen isim
 
 #todos
-* T1
+* Logging
+* Caching
+* ef core performance tuning
+* aspnet configuration
+* 
